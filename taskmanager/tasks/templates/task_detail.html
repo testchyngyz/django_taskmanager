@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <a href="{% url 'main-page' %}">Back</a>
+
+    <h1>Task Detail</h1>
+
+    <h2>{{ task.title }}</h2>
+
+    <p>{{ task.content }}</p>
+
+    <hr>
+
+    <h4>{{ task.created_date }}</h4>
+
+    <h4>Done: {{ task.done }}</h4>
+
+
+    <a href="{% url 'delete-task' task.id %}" style="padding: 4px; border: 1px solid black; background: red; color:white">Delete</a>
+    <a href="{% url 'change-task' task.id %}" style="padding: 4px; border: 1px solid black; background: green; color:white">Change</a>
+
+
+{% endblock %}
